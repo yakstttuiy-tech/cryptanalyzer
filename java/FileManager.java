@@ -14,4 +14,8 @@ public class FileManager {
         Path path = Paths.get(filePath);
         Files.write(path, content.getBytes(StandardCharsets.UTF_8));
     }
+    public boolean fileExists(String filePath) {
+        Path path = Paths.get(filePath);
+        return Files.exists(path);
+    }
 }
