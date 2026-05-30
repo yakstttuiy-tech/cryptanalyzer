@@ -7,6 +7,7 @@ public class Main {
         FileManager fileManager = new FileManager();
         BruteForce bruteForce = new BruteForce();
         StatisticalAnalyzer statisticalAnalyzer = new StatisticalAnalyzer();
+        Validator validator = new Validator(Cipher.getAlphabet());
 
         while (true) {
             System.out.println("\nШифр Цезаря ");
