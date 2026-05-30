@@ -68,6 +68,9 @@ public class Main {
                     fileManager.writeFile(outputPath, result);
                     System.out.println("Результат сохранён в: " + outputPath);
 
+                } catch (java.io.IOException e) {
+                    System.out.println("Ошибка ввода-вывода: " + e.getMessage());
+
                 } catch (Exception e) {
                     System.out.println("Ошибка: " + e.getMessage());
                 }
