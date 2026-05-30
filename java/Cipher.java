@@ -19,4 +19,15 @@ public class Cipher {
         }
         return c;
     }
+    public String encrypt(String text, int shift) {
+        int normalizedShift = shift % ALPHABET.length;
+        if (normalizedShift < 0) {
+            normalizedShift += ALPHABET.length;
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            result.append(shiftCharacter(text.charAt(i), normalizedShift));
+        }
+        return result.toString();
+    }
 }
