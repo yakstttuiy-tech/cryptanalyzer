@@ -22,6 +22,12 @@ public class Main {
                 System.out.println("До свидания!");
                 break;
             }
+            if (choice < 1 || choice > 4) {
+                System.out.println("Неверный выбор");
+                continue;
+            }
+        }
+        scanner.close();
 
 
         }
