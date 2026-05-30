@@ -45,6 +45,24 @@ public class Main {
                     System.out.println("Ошибка: ключ должен быть от 0 до " + (Cipher.getAlphabet().length - 1));
                     continue;
                 }
+                try {
+                    String text = fileManager.readFile(inputPath);
+                    String result;
+
+                    if (choice == 1) {
+                        result = cipher.encrypt(text, key);
+                        System.out.println("Шифрование выполнено!");
+                    } else {
+                        result = cipher.decrypt(text, key);
+                        System.out.println("Расшифровка выполнена!");
+                    }
+
+                    fileManager.writeFile(outputPath, result);
+                    System.out.println("Результат сохранён в: " + outputPath);
+
+                } catch (Exception e) {
+                    System.out.println("Ошибка: " + e.getMessage());
+                }
             }
         }
         scanner.close();
