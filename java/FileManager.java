@@ -10,4 +10,8 @@ public class FileManager {
         byte[] bytes = Files.readAllBytes(path);
         return new String(bytes, StandardCharsets.UTF_8);
     }
+    public void writeFile(String filePath, String content) throws IOException {
+        Path path = Paths.get(filePath);
+        Files.write(path, content.getBytes(StandardCharsets.UTF_8));
+    }
 }
