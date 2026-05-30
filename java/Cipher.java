@@ -30,4 +30,7 @@ public class Cipher {
         }
         return result.toString();
     }
+    public String decrypt(String text, int shift) {
+        return encrypt(text, -shift);
+    }
 }
