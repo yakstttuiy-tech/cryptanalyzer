@@ -56,6 +56,10 @@ public class Main {
                         result = cipher.decrypt(text, key);
                         System.out.println("Расшифровка выполнена!");
                     }
+                    else if (choice == 3) {
+                        result = bruteForce.decryptByBruteForce(text);
+                        System.out.println("Взлом перебором выполнен!");
+                    }
 
                     fileManager.writeFile(outputPath, result);
                     System.out.println("Результат сохранён в: " + outputPath);
