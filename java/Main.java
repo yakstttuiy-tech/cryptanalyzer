@@ -60,6 +60,10 @@ public class Main {
                         result = bruteForce.decryptByBruteForce(text);
                         System.out.println("Взлом перебором выполнен!");
                     }
+                    else if (choice == 4) {
+                        result = statisticalAnalyzer.analyze(text, "");
+                        System.out.println("Статистический анализ выполнен!");
+                    }
 
                     fileManager.writeFile(outputPath, result);
                     System.out.println("Результат сохранён в: " + outputPath);
