@@ -7,4 +7,16 @@ public class Cipher {
     public static char[] getAlphabet() {
         return ALPHABET;
     }
+    private char shiftCharacter(char c, int shift) {
+        for (int i = 0; i < ALPHABET.length; i++) {
+            if (ALPHABET[i] == c) {
+                int newIndex = (i + shift) % ALPHABET.length;
+                if (newIndex < 0) {
+                    newIndex += ALPHABET.length;
+                }
+                return ALPHABET[newIndex];
+            }
+        }
+        return c;
+    }
 }
