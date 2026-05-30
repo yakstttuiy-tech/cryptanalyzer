@@ -4,4 +4,7 @@ public class Cipher {
         'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ',
         'ы', 'ь', 'э', 'ю', 'я'
     };
+    public static char[] getAlphabet() {
+        return ALPHABET;
+    }
 }
