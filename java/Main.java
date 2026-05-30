@@ -27,6 +27,25 @@ public class Main {
                 System.out.println("Неверный выбор");
                 continue;
             }
+            System.out.print("Введите путь к входному файлу: ");
+            String inputPath = scanner.nextLine();
+            System.out.print("Введите путь к выходному файлу: ");
+            String outputPath = scanner.nextLine();
+
+            if (!validator.isFileExists(inputPath)) {
+                System.out.println("Ошибка: входной файл не существует!");
+                continue;
+            }
+
+            if (choice == 1 || choice == 2) {
+                System.out.print("Введите ключ (сдвиг): ");
+                int key = scanner.nextInt();
+                scanner.nextLine();
+                if (!validator.isValidKey(key)) {
+                    System.out.println("Ошибка: ключ должен быть от 0 до " + (Cipher.getAlphabet().length - 1));
+                    continue;
+                }
+            }
         }
         scanner.close();
 
