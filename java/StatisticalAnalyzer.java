@@ -34,4 +34,10 @@ public class StatisticalAnalyzer {
         if (shift < 0) shift += ALPHABET.length;
         return shift;
     }
+    public String analyze(String encryptedText, String representativeText) {
+        System.out.println("Запуск статистического анализа...");
+        int shift = findMostLikelyShift(encryptedText, representativeText);
+        System.out.println("Подобран сдвиг: " + shift);
+        return cipher.decrypt(encryptedText, shift);
+    }
 }
